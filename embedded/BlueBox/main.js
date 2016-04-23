@@ -10,3 +10,6 @@ var analogPin0 = new mraa.Aio(0); //setup access analog input Analog pin #0 (A0)
 var analogValue = analogPin0.read(); //read the value of the analog pin
 console.log(analogValue); //write the value of the analog pin to the console
 
+//var survoy = require('./rest.js');
+require('./rest.js')();
+postToSurvoy('temperature',analogValue);
