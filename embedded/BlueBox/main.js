@@ -37,7 +37,7 @@ var lcd = require('jsupm_i2clcd');
 
 
 accel = require("./accel.js");
-accel.init();
+accel.init(display);
 
 periodicActivity(); //call the periodicActivity function
 

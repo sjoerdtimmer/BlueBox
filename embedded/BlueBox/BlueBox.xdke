@@ -15,8 +15,8 @@
         "name": "BlueBox.xdk"
       },
       "BlueBox.xdke": {
-        "previousModTime": 1461427655941,
-        "modified": 1461427655941,
+        "previousModTime": 1461435420247,
+        "modified": 1461435420247,
         "seen": true,
         "name": "BlueBox.xdke"
       },
@@ -27,14 +27,14 @@
         "name": "icon.png"
       },
       "main.js": {
-        "previousModTime": 1461427652031,
-        "modified": 1461427652031,
+        "previousModTime": 1461430277669,
+        "modified": 1461430277669,
         "seen": true,
         "name": "main.js"
       },
       "package.json": {
-        "previousModTime": 1461410044719,
-        "modified": 1461410044719,
+        "previousModTime": 1461428016951,
+        "modified": 1461428016951,
         "seen": true,
         "name": "package.json"
       },
@@ -51,24 +51,36 @@
         "name": "xdk/project-info.json"
       },
       "rest.js": {
-        "previousModTime": 1461427785158,
-        "modified": 1461427785158,
+        "previousModTime": 1461435637284,
+        "modified": 1461435637284,
         "seen": true,
         "name": "rest.js"
       },
       "accel.js": {
-        "previousModTime": 1461427673358,
-        "modified": 1461427673358,
+        "previousModTime": 1461430914538,
+        "modified": 1461430914538,
         "seen": true,
         "name": "accel.js"
+      },
+      "touch_sensor.js": {
+        "previousModTime": 1461428016951,
+        "modified": 1461428016951,
+        "seen": true,
+        "name": "touch_sensor.js"
+      },
+      "battery.js": {
+        "previousModTime": 1461435687680,
+        "modified": 1461435687680,
+        "seen": true,
+        "name": "battery.js"
       }
     },
     "boardFileStatus": {
       "rest.js": {
-        "previousModTime": 1461427787774
+        "previousModTime": 1461435691752
       },
-      "accel.js": {
-        "previousModTime": 1461427787774
+      "battery.js": {
+        "previousModTime": 1461435691752
       }
     }
   }

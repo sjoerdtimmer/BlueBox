@@ -3,9 +3,12 @@ var x, y, z;
 var ax, ay, az;
 var myDigitalAccelerometer;
 var outputStr;
+var displ;
 
-exports.init = function() {
+require('./rest.js')();
 
+exports.init = function(display) {
+    displ = display;
     digitalAccelerometer = require('jsupm_mma7660');
 
     // Instantiate an MMA7660 on I2C bus 0
@@ -47,6 +50,23 @@ exports.measure = function(){
 		+ "g y = " + roundNum(digitalAccelerometer.floatp_value(ay), 6) 
 		+ "g z = " + roundNum(digitalAccelerometer.floatp_value(az), 6) + "g";
 	console.log(outputStr);
+    
+    postAccelToSurvoy(
+        digitalAccelerometer.intp_value(x),
+        digitalAccelerometer.intp_value(y),
+        digitalAccelerometer.intp_value(z),
+        roundNum(digitalAccelerometer.floatp_value(ax), 6),
+        roundNum(digitalAccelerometer.floatp_value(ay), 6),
+        roundNum(digitalAccelerometer.floatp_value(az), 6)
+    );
+    
+    vx = digitalAccelerometer.floatp_value(ax);
+    vy = digitalAccelerometer.floatp_value(ay);
+    vz = digitalAccelerometer.floatp_value(az);
+    if(vx*vx+vy*vy+vz*vz > 2){
+        displ.setColor(255, 0, 0);
+        setTimeout(function(){displ.setColor(0, 255, 0);},3000);
+    }
 }
 
 function roundNum(num, decimalPlaces)
