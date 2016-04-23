@@ -35,13 +35,20 @@ var lcd = require('jsupm_i2clcd');
     display.setCursor(1, 6);
     display.write(' deg cel');
 
+
+accel = require("./accel.js");
+accel.init();
+
 periodicActivity(); //call the periodicActivity function
 
 function periodicActivity()
 {
     useUpm();
+    accel.measure();
     setTimeout(periodicActivity,1000); //call the indicated function after 1 second (1000 milliseconds)
 }
+
+
 
 function useUpm() {
     

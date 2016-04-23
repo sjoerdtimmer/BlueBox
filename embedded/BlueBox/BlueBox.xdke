@@ -15,8 +15,8 @@
         "name": "BlueBox.xdk"
       },
       "BlueBox.xdke": {
-        "previousModTime": 1461421350265,
-        "modified": 1461421350265,
+        "previousModTime": 1461427655941,
+        "modified": 1461427655941,
         "seen": true,
         "name": "BlueBox.xdke"
       },
@@ -27,8 +27,8 @@
         "name": "icon.png"
       },
       "main.js": {
-        "previousModTime": 1461421054968,
-        "modified": 1461421054968,
+        "previousModTime": 1461427652031,
+        "modified": 1461427652031,
         "seen": true,
         "name": "main.js"
       },
@@ -51,30 +51,24 @@
         "name": "xdk/project-info.json"
       },
       "rest.js": {
-        "previousModTime": 1461422047129,
-        "modified": 1461422047129,
+        "previousModTime": 1461427785158,
+        "modified": 1461427785158,
         "seen": true,
         "name": "rest.js"
+      },
+      "accel.js": {
+        "previousModTime": 1461427673358,
+        "modified": 1461427673358,
+        "seen": true,
+        "name": "accel.js"
       }
     },
     "boardFileStatus": {
-      "icon.png": {
-        "previousModTime": 1461422067364
-      },
-      "main.js": {
-        "previousModTime": 1461422067364
-      },
-      "package.json": {
-        "previousModTime": 1461422067364
-      },
-      "README.md": {
-        "previousModTime": 1461422067364
-      },
-      "xdk/project-info.json": {
-        "previousModTime": 1461422067364
-      },
       "rest.js": {
-        "previousModTime": 1461422067364
+        "previousModTime": 1461427787774
+      },
+      "accel.js": {
+        "previousModTime": 1461427787774
       }
     }
   }
