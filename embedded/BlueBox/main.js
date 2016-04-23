@@ -42,14 +42,14 @@ accel.init(display);
 batt = require("./battery.js");
 
 
-periodicActivity(); //call the periodicActivity function
+setInterval(periodicActivity,1000); //call the periodicActivity function
 
 function periodicActivity()
 {
     useUpm();
     accel.measure();
     batt.measure();
-    setTimeout(periodicActivity,1000); //call the indicated function after 1 second (1000 milliseconds)
+//    setTimeout(periodicActivity,1000); //call the indicated function after 1 second (1000 milliseconds)
 }
 
 

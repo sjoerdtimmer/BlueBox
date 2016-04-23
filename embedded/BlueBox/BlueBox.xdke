@@ -15,8 +15,8 @@
         "name": "BlueBox.xdk"
       },
       "BlueBox.xdke": {
-        "previousModTime": 1461435978770,
-        "modified": 1461435978770,
+        "previousModTime": 1461436266443,
+        "modified": 1461436266443,
         "seen": true,
         "name": "BlueBox.xdke"
       },
@@ -27,8 +27,8 @@
         "name": "icon.png"
       },
       "main.js": {
-        "previousModTime": 1461436069256,
-        "modified": 1461436069256,
+        "previousModTime": 1461436300206,
+        "modified": 1461436300206,
         "seen": true,
         "name": "main.js"
       },
@@ -83,10 +83,7 @@
     },
     "boardFileStatus": {
       "main.js": {
-        "previousModTime": 1461436070222
-      },
-      "battery.js": {
-        "previousModTime": 1461436070222
+        "previousModTime": 1461436303283
       }
     }
   }
