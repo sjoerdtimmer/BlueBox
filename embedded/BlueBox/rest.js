@@ -1,6 +1,6 @@
 var rest = require('restler');
-var serverip = "10.10.107.48";
-//var serverip = "10.10.105.204";
+//var serverip = "10.10.107.48";
+var serverip = "10.10.105.204";
 module.exports = function(){
     this.postToSurvoy = function(field, value) {
         var data = {headers: { "Content-Type": "application/json" }};
