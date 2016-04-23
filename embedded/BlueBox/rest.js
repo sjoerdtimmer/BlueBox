@@ -3,7 +3,7 @@ var request = require('request');
 //var serverip = "10.10.107.48";
 //var serverip = "10.10.105.204";
 var serverip = "40.118.109.71";
-var serverurl = "http://"+serverip+":8080/bluebox/servoy-service/rest_ws/bluebox/";
+var serverurl = "http://"+serverip+":8080/servoy-service/rest_ws/bluebox/";
 module.exports = function(){
     
     this.postToSurvoy = function(field, value) {

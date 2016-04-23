@@ -39,12 +39,16 @@ var lcd = require('jsupm_i2clcd');
 accel = require("./accel.js");
 accel.init(display);
 
+batt = require("./battery.js");
+
+
 periodicActivity(); //call the periodicActivity function
 
 function periodicActivity()
 {
     useUpm();
     accel.measure();
+    batt.measure();
     setTimeout(periodicActivity,1000); //call the indicated function after 1 second (1000 milliseconds)
 }
 
