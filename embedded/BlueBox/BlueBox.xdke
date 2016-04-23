@@ -15,8 +15,8 @@
         "name": "BlueBox.xdk"
       },
       "BlueBox.xdke": {
-        "previousModTime": 1461416946702,
-        "modified": 1461416946702,
+        "previousModTime": 1461421350265,
+        "modified": 1461421350265,
         "seen": true,
         "name": "BlueBox.xdke"
       },
@@ -27,8 +27,8 @@
         "name": "icon.png"
       },
       "main.js": {
-        "previousModTime": 1461416537030,
-        "modified": 1461416537030,
+        "previousModTime": 1461421054968,
+        "modified": 1461421054968,
         "seen": true,
         "name": "main.js"
       },
@@ -51,15 +51,30 @@
         "name": "xdk/project-info.json"
       },
       "rest.js": {
-        "previousModTime": 1461416979178,
-        "modified": 1461416979178,
+        "previousModTime": 1461422047129,
+        "modified": 1461422047129,
         "seen": true,
         "name": "rest.js"
       }
     },
     "boardFileStatus": {
+      "icon.png": {
+        "previousModTime": 1461422067364
+      },
+      "main.js": {
+        "previousModTime": 1461422067364
+      },
+      "package.json": {
+        "previousModTime": 1461422067364
+      },
+      "README.md": {
+        "previousModTime": 1461422067364
+      },
+      "xdk/project-info.json": {
+        "previousModTime": 1461422067364
+      },
       "rest.js": {
-        "previousModTime": 1461416983709
+        "previousModTime": 1461422067364
       }
     }
   }
