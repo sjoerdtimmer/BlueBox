@@ -4,11 +4,12 @@ var ax, ay, az;
 var myDigitalAccelerometer;
 var outputStr;
 var displ;
+var rest;
+// require('./rest.js')();
 
-require('./rest.js')();
-
-exports.init = function(display) {
+exports.init = function(display,restobj) {
     displ = display;
+    rest = restobj;
     digitalAccelerometer = require('jsupm_mma7660');
 
     // Instantiate an MMA7660 on I2C bus 0
@@ -41,7 +42,7 @@ exports.measure = function(){
 	outputStr = "Raw values: x = " + digitalAccelerometer.intp_value(x) +
 	" y = " + digitalAccelerometer.intp_value(y) +
 	" z = " + digitalAccelerometer.intp_value(z);
-	console.log(outputStr);
+//	console.log(outputStr);
     
 
 	myDigitalAccelerometer.getAcceleration(ax, ay, az);
@@ -49,9 +50,9 @@ exports.measure = function(){
 		+ roundNum(digitalAccelerometer.floatp_value(ax), 6)
 		+ "g y = " + roundNum(digitalAccelerometer.floatp_value(ay), 6) 
 		+ "g z = " + roundNum(digitalAccelerometer.floatp_value(az), 6) + "g";
-	console.log(outputStr);
+//	console.log(outputStr);
     
-    postAccelToSurvoy(
+    rest.postAccelToSurvoy(
         digitalAccelerometer.intp_value(x),
         digitalAccelerometer.intp_value(y),
         digitalAccelerometer.intp_value(z),
