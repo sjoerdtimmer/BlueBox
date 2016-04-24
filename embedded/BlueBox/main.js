@@ -73,9 +73,11 @@ setInterval(periodicActivity,1000); //call the periodicActivity function
 
 function crash(){
     myLed.write(1);
+    display.setColor(255,0,0);
     setTimeout(function(){
         myLed.write(0);
-    },10000);
+        display.setColor(0,255,0);
+    },30000);
 }
 
 function periodicActivity()
