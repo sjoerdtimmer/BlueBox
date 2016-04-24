@@ -65,15 +65,29 @@ var myLed = new mraa.Gpio(2); //LED hooked up to digital pin 13 (or built in pin
 myLed.dir(mraa.DIR_OUT); //set the gpio direction to output
 myLed.write(0);            
 
+var button = new mraa.Gpio(5);     // set up digital read on digital pin #5
+button.dir(mraa.DIR_IN);           // set the GPIO direction to input
+var buttonState;
+
 setInterval(periodicActivity,1000); //call the periodicActivity function
+
+function crash(){
+    myLed.write(1);
+    setTimeout(function(){
+        myLed.write(0);
+    },10000);
+}
 
 function periodicActivity()
 {
     try{
+        buttonState = button.read();   // read the value of the digital pin
+        console.log(buttonState);
+        if(buttonState==1){
+            crash();
+        }
         useUpm();
-        accel.measure(function(){
-            myLed.write(1); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
-        });
+        accel.measure(crash);
         batt.measure();    
     }catch(ex){
         console.log("ERROR CAUGHT, continuing anyway,..");
