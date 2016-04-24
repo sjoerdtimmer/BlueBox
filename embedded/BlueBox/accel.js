@@ -37,7 +37,7 @@ exports.init = function(display,restobj) {
     az = digitalAccelerometer.new_floatp();
 };
 
-exports.measure = function(){
+exports.measure = function(callback){
     myDigitalAccelerometer.getRawValues(x, y, z);
 	outputStr = "Raw values: x = " + digitalAccelerometer.intp_value(x) +
 	" y = " + digitalAccelerometer.intp_value(y) +
@@ -65,6 +65,7 @@ exports.measure = function(){
     vy = digitalAccelerometer.floatp_value(ay);
     vz = digitalAccelerometer.floatp_value(az);
     if(vx*vx+vy*vy+vz*vz > 2){
+        callback();
         displ.setColor(255, 0, 0);
         setTimeout(function(){displ.setColor(0, 255, 0);},3000);
     }

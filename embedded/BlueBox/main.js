@@ -61,6 +61,9 @@ accel.init(display,rest);
 batt = require("./battery.js");
 batt.init(rest);
 
+var myLed = new mraa.Gpio(2); //LED hooked up to digital pin 13 (or built in pin on Intel Galileo Gen2 as well as Intel Edison)
+myLed.dir(mraa.DIR_OUT); //set the gpio direction to output
+myLed.write(0);            
 
 setInterval(periodicActivity,1000); //call the periodicActivity function
 
@@ -68,7 +71,9 @@ function periodicActivity()
 {
     try{
         useUpm();
-        accel.measure();
+        accel.measure(function(){
+            myLed.write(1); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
+        });
         batt.measure();    
     }catch(ex){
         console.log("ERROR CAUGHT, continuing anyway,..");
