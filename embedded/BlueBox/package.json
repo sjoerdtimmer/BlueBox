@@ -7,6 +7,7 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-      "restler": "^3.4.0"
+      "restler": "^3.4.0",
+      "request": "^2.72.0"
   }
 }
