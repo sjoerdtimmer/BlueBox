@@ -16,6 +16,20 @@ Using a ssh client:
 Article: https://software.intel.com/en-us/html5/articles/intel-xdk-iot-edition-nodejs-templates
 */
 
+
+var SegfaultHandler = require('segfault-handler');
+
+SegfaultHandler.registerHandler("crash.log"); // With no argument, SegfaultHandler will generate a generic log file name
+
+// Optionally specify a callback function for custom logging. This feature is currently only supported for Node.js >= v0.12 running on Linux.
+SegfaultHandler.registerHandler("crash.log", function(signal, address, stack) {
+    // Do what you want with the signal, address, or stack (array)
+    // This callback will execute before the signal is forwarded on.
+    console.log("segfault detected!");
+});
+
+
+
 var B = 3975;
 var mraa = require('mraa'); //require mraa
 
@@ -35,17 +49,32 @@ var lcd = require('jsupm_i2clcd');
     display.setCursor(1, 6);
     display.write(' deg cel');
 
+//display = new mraa.Spi(0)
+
+
+rest = require('./rest.js');
+
 
 accel = require("./accel.js");
-accel.init();
+accel.init(display,rest);
 
-periodicActivity(); //call the periodicActivity function
+batt = require("./battery.js");
+batt.init(rest);
+
+
+setInterval(periodicActivity,1000); //call the periodicActivity function
 
 function periodicActivity()
 {
-    useUpm();
-    accel.measure();
-    setTimeout(periodicActivity,1000); //call the indicated function after 1 second (1000 milliseconds)
+    try{
+        useUpm();
+        accel.measure();
+        batt.measure();    
+    }catch(ex){
+        console.log("ERROR CAUGHT, continuing anyway,..");
+    }
+    
+//    setTimeout(periodicActivity,1000); //call the indicated function after 1 second (1000 milliseconds)
 }
 
 
@@ -56,11 +85,12 @@ function useUpm() {
         var resistance = (1023 - a) * 10000 / a; //get the resistance of the sensor;
         var celsius_temperature = 1 / (Math.log(resistance / 10000) / B + 1 / 298.15) - 273.15;//convert to temperature via datasheet ;
         var fahrenheit_temperature = (celsius_temperature * (9 / 5)) + 32;
-    
+        
+ 
     display.setCursor(1, 4);
     display.write(Math.round(celsius_temperature)+" ");
-    require('./rest.js')();
-    postToSurvoy('temperature',Math.round(celsius_temperature));
+    
+    rest.postToSurvoy('temperature',Math.round(celsius_temperature));
     }
 //function alarm() {
 //    myDigitalPin5.write(buzzerstate?1:0); //set the digital pin to high (1)

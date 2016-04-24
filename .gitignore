@@ -1,3 +1,5 @@
 desktop.ini
 embedded/BlueBox/BlueBox.xdke
+embedded/BlueBox/node_modules
 *.xdke
+*.xdk
